@@ -12,6 +12,7 @@ services:
   laravel:
     container_name: laravel
     image: docker.io/bitnami/laravel:9
+    user: "1000"
     ports:
       - '8000:8000'
     environment:
