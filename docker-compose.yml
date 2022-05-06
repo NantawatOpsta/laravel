@@ -2,13 +2,15 @@ version: '2'
 
 services:
   mariadb:
+    container_name: mariadb
     image: docker.io/bitnami/mariadb:10.6
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=bn_myapp
       - MARIADB_DATABASE=bitnami_myapp
-  myapp:
+  laravel:
+    container_name: laravel
     image: docker.io/bitnami/laravel:9
     ports:
       - '8000:8000'
